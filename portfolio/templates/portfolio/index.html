@@ -1,0 +1,48 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    {% load bootstrap5 %}
+    {% bootstrap_css %}
+    {% bootstrap_javascript %}
+     <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+{#    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">#}
+
+    <link rel="stylesheet" type="text/css" href="{% static '/portfolio/style.css' %}">
+
+</head>
+<body>
+
+<header class="site-navbar" role="banner">
+    <nav class="navbar">
+        <div class="container justify-content-center">
+            <ul class="navbar">
+                <li><a href="{% url 'about' %}" class="nav-link">About</a></li>
+                <li><a href="{% url 'projects' %}" class="nav-link">Projects</a></li>
+            </ul>
+            <ul class="nav navbar-nav">
+                <li><a href="{% url 'main' %}" class="FNBB-logo">
+                    <img src="{% static '/images/FNBB_Black.png' %}" alt="FNBB" width="100" height="30" >
+                </a></li>
+            </ul>
+            <ul class="navbar">
+                <li><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+                <li><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    <hr class="solid">
+</header>
+
+
+
+<div class="main">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

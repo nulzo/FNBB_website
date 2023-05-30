@@ -1,0 +1,15 @@
+{% extends "portfolio/index.html" %}
+
+{% load crispy_forms_filters %}
+
+<div class="contact">
+    {% block content %}
+        <div class="email-form">
+            <form method="POST" novalidate>
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button class="email-button" type="submit">Send Message</button>
+            </form>
+        </div>
+    {% endblock %}
+</div>
